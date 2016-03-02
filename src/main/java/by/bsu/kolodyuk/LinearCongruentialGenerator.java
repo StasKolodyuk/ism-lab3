@@ -5,27 +5,31 @@ import org.apache.commons.math3.random.AbstractRandomGenerator;
 
 public class LinearCongruentialGenerator extends AbstractRandomGenerator {
 
-    private long a;
-    private long c;
-    private long m;
+    private long multiplier;
+    private long addend;
+    private long mask;
 
-    private long current;
+    private long oldseed;
 
-    public LinearCongruentialGenerator(int a, int x0, int c, int m) {
-        this.a = a;
-        this.current = x0;
-        this.c = c;
-        this.m = m;
+    public LinearCongruentialGenerator() {
+        this(0, 1664525, 1013904223, 1L << 32);
+    }
+
+    public LinearCongruentialGenerator(long seed, long multiplier, long addend, long mask) {
+        this.oldseed = seed;
+        this.multiplier = multiplier;
+        this.addend = addend;
+        this.mask = mask;
     }
 
     @Override
     public void setSeed(long seed) {
-        this.current = seed;
+        this.oldseed = seed;
     }
 
     @Override
     public double nextDouble() {
-        current = (a * current + c) % m;
-        return current;
+        oldseed = (multiplier * oldseed + addend) % mask;
+        return (double)oldseed / mask;
     }
 }
