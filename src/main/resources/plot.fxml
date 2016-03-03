@@ -11,14 +11,14 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <LineChart fx:id="firstLineChart" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScatterChart fx:id="firstScatterChart" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <xAxis>
                       <NumberAxis side="BOTTOM" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis side="LEFT" />
                     </yAxis>
-                  </LineChart>
+                  </ScatterChart>
                </children></AnchorPane>
       </content>
     </Tab>
@@ -26,14 +26,14 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <LineChart fx:id="secondLineChart" layoutX="-19.0" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScatterChart fx:id="secondScatterChart" layoutX="-19.0" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <xAxis>
                       <NumberAxis side="BOTTOM" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis side="LEFT" />
                     </yAxis>
-                  </LineChart>
+                  </ScatterChart>
                </children></AnchorPane>
       </content>
     </Tab>
@@ -41,14 +41,14 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <LineChart fx:id="thirdLineChart" layoutX="39.0" layoutY="-29.0" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScatterChart fx:id="thirdScatterChart" layoutX="39.0" layoutY="-29.0" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <xAxis>
                       <NumberAxis side="BOTTOM" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis side="LEFT" />
                     </yAxis>
-                  </LineChart>
+                  </ScatterChart>
                </children>
             </AnchorPane>
          </content>
@@ -57,14 +57,14 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <LineChart fx:id="fourthLineChart" layoutX="86.0" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScatterChart fx:id="fourthScatterChart" layoutX="86.0" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <xAxis>
                       <NumberAxis side="BOTTOM" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis side="LEFT" />
                     </yAxis>
-                  </LineChart>
+                  </ScatterChart>
                </children>
             </AnchorPane>
          </content>

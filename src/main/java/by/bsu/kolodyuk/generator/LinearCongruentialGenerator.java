@@ -12,7 +12,7 @@ public class LinearCongruentialGenerator extends AbstractRandomGenerator {
     private long oldseed;
 
     public LinearCongruentialGenerator() {
-        this(0, 1664525, 1013904223, 1L << 32);
+        this(0, 17, 3, 2097152);
     }
 
     public LinearCongruentialGenerator(long seed, long multiplier, long addend, long mask) {

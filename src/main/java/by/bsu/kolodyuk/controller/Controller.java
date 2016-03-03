@@ -5,7 +5,7 @@ import by.bsu.kolodyuk.generator.LinearCongruentialGenerator;
 import by.bsu.kolodyuk.generator.MacLarenMarsagliaGenerator;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import org.apache.commons.math3.distribution.UniformIntegerDistribution;
 import org.apache.commons.math3.distribution.UniformRealDistribution;
 import org.apache.commons.math3.random.RandomGenerator;
@@ -22,13 +22,13 @@ import static org.apache.commons.lang3.ArrayUtils.toObject;
 public class Controller implements Initializable
 {
     @FXML
-    LineChart<Double, Double> firstLineChart;
+    XYChart<Double, Double> firstScatterChart;
     @FXML
-    LineChart<Double, Double> secondLineChart;
+    XYChart<Double, Double> secondScatterChart;
     @FXML
-    LineChart<Double, Double> thirdLineChart;
+    XYChart<Double, Double> thirdScatterChart;
     @FXML
-    LineChart<Double, Double> fourthLineChart;
+    XYChart<Double, Double> fourthScatterChart;
 
 
     @Override
@@ -38,21 +38,21 @@ public class Controller implements Initializable
 
     public void generateValues() {
 
-        RandomGenerator firstCongruentialGenerator = new LinearCongruentialGenerator(0, 3, 1, 31);
+        RandomGenerator firstCongruentialGenerator = new LinearCongruentialGenerator(4, 7, 3, 101);
         RandomGenerator secondCongruentialGenerator = new LinearCongruentialGenerator();
 
-        RandomGenerator firstMacLarenMarsagliaGenerator = new MacLarenMarsagliaGenerator(firstCongruentialGenerator, secondCongruentialGenerator, 64);
-        RandomGenerator secondMacLarenMarsagliaGenerator = new MacLarenMarsagliaGenerator(secondCongruentialGenerator, firstCongruentialGenerator, 64);
+        RandomGenerator firstMacLarenMarsagliaGenerator = new MacLarenMarsagliaGenerator(firstCongruentialGenerator, secondCongruentialGenerator, 10);
+        RandomGenerator secondMacLarenMarsagliaGenerator = new MacLarenMarsagliaGenerator(secondCongruentialGenerator, firstCongruentialGenerator, 10);
 
         List<RandomGenerator> generators = asList(firstCongruentialGenerator,
                                                   secondCongruentialGenerator,
                                                   firstMacLarenMarsagliaGenerator,
                                                   secondMacLarenMarsagliaGenerator);
 
-        List<LineChart<Double, Double>> charts = asList(firstLineChart,
-                                                        secondLineChart,
-                                                        thirdLineChart,
-                                                        fourthLineChart);
+        List<XYChart<Double, Double>> charts = asList(firstScatterChart,
+                secondScatterChart,
+                thirdScatterChart,
+                fourthScatterChart);
 
         // Real Random Values
         System.out.println("Real Distribution");

@@ -29,7 +29,7 @@ public class MacLarenMarsagliaGenerator extends AbstractRandomGenerator
     @Override
     public double nextDouble()
     {
-        int index = (int)second.nextDouble()*limit;
+        int index = (int)(second.nextDouble()*limit);
         double result = buffer.get(index);
         buffer.set(index, first.nextDouble());
 
