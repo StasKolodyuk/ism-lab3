@@ -1,4 +1,4 @@
-package by.bsu.kolodyuk;
+package by.bsu.kolodyuk.generator;
 
 
 import org.apache.commons.math3.random.AbstractRandomGenerator;
