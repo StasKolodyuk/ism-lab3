@@ -29,7 +29,8 @@ public class MomentUtils
     }
 
     public static double empiricalProbability(List<? extends Number> numbers, Number x) {
-        return (double) (numbers.stream().mapToDouble(n -> n.doubleValue()).filter(n -> n <= x.doubleValue()).count()) / numbers.size();
+        double count = numbers.stream().mapToDouble(n -> n.doubleValue()).filter(n -> n <= x.doubleValue()).count();
+        return count / numbers.size();
     }
 
     public static double getRawMoment(List<? extends Number> numbers, int power) {

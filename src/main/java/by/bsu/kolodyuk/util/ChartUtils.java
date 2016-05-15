@@ -1,10 +1,10 @@
 package by.bsu.kolodyuk.util;
 
+import by.bsu.kolodyuk.distribution.IntegerDistribution;
+import by.bsu.kolodyuk.distribution.RealDistribution;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
-import org.apache.commons.math3.distribution.IntegerDistribution;
-import org.apache.commons.math3.distribution.RealDistribution;
 import org.apache.commons.math3.stat.inference.ChiSquareTest;
 import org.apache.commons.math3.stat.inference.KolmogorovSmirnovTest;
 
@@ -50,7 +50,8 @@ public class ChartUtils
 
         Series<Double, Double> empiricalSeries = new Series<>();
         empiricalSeries.setName("Empirical Distribution");
-        List<Double> empiricalData = asList(toObject(distribution.sample(n)));
+        double[] empiricalDataArray = distribution.sample(n);
+        List<Double> empiricalData = asList(toObject(empiricalDataArray));
         DoubleStream.iterate(-length/2, i -> i + step).limit(n).forEach(i -> empiricalSeries.getData().add(new Data<>(i, empiricalProbability(empiricalData, i))));
         chart.getData().add(empiricalSeries);
 
@@ -66,7 +67,7 @@ public class ChartUtils
         System.out.println(distribution.getClass().getSimpleName() + ": " + chiSquareRejected);
 
         KolmogorovSmirnovTest kolmogorovSmirnovTest = new KolmogorovSmirnovTest();
-        boolean kolmogorovSmirnovRejected = kolmogorovSmirnovTest.kolmogorovSmirnovTest(distribution, distribution.sample(n), 0.037);
+        boolean kolmogorovSmirnovRejected = kolmogorovSmirnovTest.kolmogorovSmirnovTest(distribution.getRealDistribution(), distribution.sample(n), 0.037);
         System.out.println(distribution.getClass().getSimpleName() + ": " + kolmogorovSmirnovRejected);
     }
 }
